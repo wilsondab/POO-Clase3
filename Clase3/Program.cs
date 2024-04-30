@@ -1,4 +1,7 @@
-﻿namespace Clase3
+﻿using Clase3.Ejercicio_1;
+using Clase3.Ejercicio_2;
+
+namespace Clase3
 {
     internal class Program
     {
@@ -16,6 +19,11 @@
             //Uso
             //ImprimirDatosVehiculo(moto);
             //ImprimirDatosVehiculo(auto);
+
+            Auto auto = new Auto("Ford", "Focus");
+            Moto moto = new Moto("Mondial", "LD110s");
+            ImprimirDatosVehiculo(auto);
+            ImprimirDatosVehiculo(moto);
             #endregion
 
 
@@ -24,11 +32,20 @@
             // Definir en la interfaz con una sola firma que indique que se va a obtener todos los libros
             // Implementar la interfaz en la clase biblioteca para que devuelva los libros
             // Instanciar y utilizar la clase biblioteca
+            Console.WriteLine("--------------");
+
+            Biblioteca biblioteca = new Biblioteca();
+            Console.WriteLine("Libros de la biblioteca: ");
+            foreach (string libro in biblioteca.ObtenerTodosLosLibros())
+            {
+                Console.WriteLine("Se ha encontrado: " + libro + ".");
+            }
             #endregion
         }
 
-        static void ImprimirDatosVehiculo() 
-        {   
+        static void ImprimirDatosVehiculo(Vehiculo v) 
+        {
+            Console.WriteLine("Vehiculo nuevo! Marca: " + v.Marca + ", Modelo: " + v.Modelo);
         }
 
 
